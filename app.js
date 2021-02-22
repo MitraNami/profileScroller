@@ -26,8 +26,10 @@ const data = [
 ];
 
 // Profile Iterator
-let profile = profileIterator(data);
+const profile = profileIterator(data);
 
+// Display the first profile when the page is loaded
+nextProfile();
 
 // Event handler for clicking the next button
 document.getElementById('next')
@@ -48,7 +50,10 @@ function nextProfile(evt) {
         <li class="list-group-item">Location: ${value.location}</li>
         <li class="list-group-item">Preference: ${value.gender} Looking for ${value.lookingfor}</li>
       </ul>`;
-  } 
+  } else {
+    // done is true: profile iterator is exhausted so reload the page
+    window.location.reload();
+  }
 }
 
 
